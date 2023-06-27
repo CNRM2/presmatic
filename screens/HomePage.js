@@ -4,7 +4,6 @@ import { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import MyTabs from '../navigation'
 
 export default function HomePage() {
   const [text, setText] = useState("");
