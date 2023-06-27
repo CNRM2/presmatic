@@ -1,0 +1,76 @@
+{
+    "Materiales": [
+        {
+            "idMaterial": 1,
+            "name": "Cerámica",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 2,
+            "name": "Pepino",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 3,
+            "name": "Mariscos",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 4,
+            "name": "Tierra",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 5,
+            "name": "Carrucha",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 6,
+            "name": "Pala",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 7,
+            "name": "Madera",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 8,
+            "name": "Mamada",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 9,
+            "name": "Tornillo",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 10,
+            "name": "Pito",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 11,
+            "name": "Harina",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        },
+        {
+            "idMaterial": 12,
+            "name": "Drogas",
+            "description": "Ceramica de buena calidad",
+            "precio": 250
+        }
+    ]
+}
