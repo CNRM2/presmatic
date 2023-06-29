@@ -16,7 +16,7 @@ export default function HomePage() {
         </View>
         <SafeAreaView style={[style.historial]}>
           <Text style={[style.text, { textAlign: "center" }]}>Historial</Text>
-          <ScrollView style={{ marginHorizontal: 10, marginVertical: 10 }}>
+          <ScrollView showsVerticalScrollIndicator={false} style={{ marginHorizontal: 10, marginVertical: 10 }}>
             <View style={[style.formatdata]}>
               <Text style={[style.texthistorial]}>Presupuesto Aeropuerto</Text>
             </View>

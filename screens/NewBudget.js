@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import DataMaterials from '../Database/dataMaterials';
-import { Fontisto, MaterialCommunityIcons, MaterialIcons, Ionicons, Entypo, AntDesign } from '@expo/vector-icons';
+import { Fontisto, MaterialCommunityIcons, MaterialIcons, Ionicons, Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 
 const NewBudget = () => {
     const [data, setData] = useState([]);
@@ -12,7 +12,9 @@ const NewBudget = () => {
     const navigation = useNavigation();
     const [textDelete, setText] = useState();
     const [selectedItems, setSelectedItems] = useState([]);
-
+    const [quantity, setQuantity] = useState(1);
+    const [color, setColor] = useState("#7E8BEC")
+    const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
 
     useEffect(() => {
         fetchData("https://randomuser.me/api/?results=100");
@@ -49,8 +51,38 @@ const NewBudget = () => {
     const addToSelectedItems = (item) => {
         const isDuplicate = selectedItems.some((selectedItem) => selectedItem.name === item.name);
         if (!isDuplicate) {
-            setSelectedItems((prevItems) => [...prevItems, item])};
+            setSelectedItems((prevItems) => [...prevItems, { ...item, quantity: 1 }])
+
+        };
     };
+    const increaseQuantity = (index) => {
+        setSelectedItems((prevItems) =>
+            prevItems.map((item, i) => {
+                if (i === index) {
+                    return { ...item, quantity: item.quantity + 1 };
+                }
+                return item;
+            })
+        );
+    };
+
+    const decreaseQuantity = (index) => {
+        setSelectedItems((prevItems) =>
+            prevItems.map((item, i) => {
+                if (i === index && item.quantity > 1) {
+                    return { ...item, quantity: item.quantity - 1 };
+                }
+                return item;
+            })
+        );
+    };
+
+    const removeItem = (index) => {
+        setSelectedItems((prevItems) =>
+            prevItems.filter((_, i) => i !== index)
+        );
+    };
+
     return (
         <LinearGradient colors={['#304BB8', '#2C91A8',]} style={style.linearGradient}>
             <SafeAreaView style={[style.container]}>
@@ -95,35 +127,45 @@ const NewBudget = () => {
                     <ScrollView style={{}} showsVerticalScrollIndicator={false}>
                         {
                             selectedItems.map((item, index) => {
+                                const isSelected = selectedItemIndex === index;
                                 return (
-                                    <View key={index} style={[style.ViewData, { backgroundColor: "#F0EEF0", marginTop: 2, borderRadius: 15, width: 325 }]}>
-                                        <Image source={{ uri: item.picture.large }}
-                                            style={[style.ImageProfile, { height: 40, width: 40,marginBottom:2,marginTop:2 }]} />
+                                    <TouchableOpacity key={index} onPress={() => setSelectedItemIndex(index)} style={[style.ViewData, { backgroundColor: isSelected ? '#6FA4FA' : "#F0EEF0", marginTop: 2, borderRadius: 15, width: 325 }]}>
                                         <View>
-                                            <TouchableOpacity>
-                                                <Text style={[style.TextData, { fontSize: 16 }]}>{item.name.first}{item.name.last}</Text>
-                                            </TouchableOpacity>
+                                            <SafeAreaView style={{ height: 50, justifyContent: "center" }}>
+                                                <Text style={[style.TextData, { fontSize: 16 }]} numberOfLines={1}>
+                                                    {`${item.name.first}${item.name.last}`.length > 10
+                                                        ? `${item.name.first}${item.name.last}`.substring(0, 15) + '...'
+                                                        : `${item.name.first}${item.name.last}`}
+                                                </Text>
+                                            </SafeAreaView>
                                         </View>
 
-                                        <View style={{ flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "flex-end" }}>
-                                            <TouchableOpacity style={{}}>
+                                        <View style={[style.buttonsBoxListView]}>
+                                            <TouchableOpacity onPress={() => increaseQuantity(index)} style={{}}>
                                                 <AntDesign name="pluscircleo" size={30} color="black"></AntDesign>
                                             </TouchableOpacity>
-                                            <Text style={{ marginLeft: 5, marginRight: 5,fontSize:16,fontWeight:"600" }}>1</Text>
-                                            <TouchableOpacity style={{ marginRight: 10 }}>
+                                            <Text style={{ marginLeft: 5, marginRight: 5, fontSize: 16, fontWeight: "600" }}>
+                                                {item.quantity}
+                                            </Text>
+                                            <TouchableOpacity onPress={() => decreaseQuantity(index)} style={{ marginRight: 20 }}>
                                                 <AntDesign name="minuscircleo" size={30} color="black" />
                                             </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => removeItem(index)} style={{ marginRight: 20 }} >
+                                                <FontAwesome name="trash-o" size={24} color="black" />
+                                            </TouchableOpacity>
                                         </View>
-                                    </View>
+                                    </TouchableOpacity>
                                 )
                             })
                         }
                     </ScrollView>
                 </SafeAreaView>
             </SafeAreaView>
-            <TouchableOpacity style={{marginHorizontal:100, marginBottom:20,alignItems:"center",backgroundColor:"black",
-             padding:15,borderRadius:15}}>
-                <Text style={{color:"white",fontSize:20}}>Crear Archivo</Text>
+            <TouchableOpacity style={{
+                marginHorizontal: 100, marginBottom: 20, alignItems: "center", backgroundColor: "black",
+                padding: 15, borderRadius: 15
+            }}>
+                <Text style={{ color: "white", fontSize: 20 }}>Crear Archivo</Text>
             </TouchableOpacity>
         </LinearGradient>
 
@@ -186,5 +228,11 @@ const style = StyleSheet.create({
         borderRadius: 15,
         marginBottom: 50,
         width: 350,
+    },
+    buttonsBoxListView: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-end",
     }
 })

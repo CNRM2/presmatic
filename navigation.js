@@ -27,7 +27,7 @@ export default function navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen name="SignUp" options={{ headerShown: false }} component={SignUp} />
+        <Stack.Screen name="SignUp" options={{ headerShown: true, title:"", headerTransparent:true }} component={SignUp} />
         <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
         <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
       </Stack.Navigator>
