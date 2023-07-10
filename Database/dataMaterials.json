@@ -1,76 +1,35 @@
 {
-    "Materiales": [
-        {
-            "idMaterial": 1,
-            "name": "Cerámica",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 2,
-            "name": "Pepino",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 3,
-            "name": "Mariscos",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 4,
-            "name": "Tierra",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 5,
-            "name": "Carrucha",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 6,
-            "name": "Pala",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 7,
-            "name": "Madera",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 8,
-            "name": "Mamada",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 9,
-            "name": "Tornillo",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 10,
-            "name": "Pito",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 11,
-            "name": "Harina",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        },
-        {
-            "idMaterial": 12,
-            "name": "Drogas",
-            "description": "Ceramica de buena calidad",
-            "precio": 250
-        }
+    "materiales": [
+      {
+        "id": "1",
+        "nombre": "Ladrillos",
+        "precio": 10.99,
+        "descripcion": "Ladrillos de construcción estándar"
+      },
+      {
+        "id": "2",
+        "nombre": "Cemento",
+        "precio": 25.99,
+        "descripcion": "Bolsa de cemento Portland"
+      },
+      {
+        "id": "3",
+        "nombre": "Arena",
+        "precio": 8.50,
+        "descripcion": "Arena de construcción"
+      },
+      {
+        "id": "4",
+        "nombre": "Varillas de acero",
+        "precio": 18.75,
+        "descripcion": "Varillas de acero corrugado"
+      },
+      {
+        "id": "5",
+        "nombre": "Tableros de yeso",
+        "precio": 12.99,
+        "descripcion": "Paneles de yeso para paredes"
+      }
     ]
-}
+  }
+  
