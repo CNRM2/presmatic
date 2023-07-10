@@ -1,7 +1,6 @@
 {
   "name": "presmatic",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -18,17 +17,25 @@
     "expo-font": "^11.1.1",
     "expo-linear-gradient": "~12.1.2",
     "expo-status-bar": "~1.4.4",
+    "expo-system-ui": "~2.2.1",
+    "fs": "^0.0.1-security",
     "link": "^1.5.1",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
+    "react-native-document-picker": "^9.0.1",
+    "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "~2.9.0",
     "react-native-ionicons": "^4.6.5",
     "react-native-linear-gradient": "^2.7.3",
+    "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
+    "react-native-sqlite-2": "^3.6.2",
+    "react-native-sqlite-storage": "^6.0.1",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.18.10",
+    "expo-sqlite": "~11.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

@@ -4,11 +4,11 @@
     "slug": "presmatic",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./Images/presmatic.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./Images/presmatic.png",
+      "resizeMode": "native",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
