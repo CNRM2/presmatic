@@ -9,6 +9,7 @@ import { Fontisto, MaterialCommunityIcons, MaterialIcons, Ionicons, Entypo, AntD
 import * as SQLITE from 'expo-sqlite';
 
 const NewBudget = () => {
+
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([])
   const navigation = useNavigation();
@@ -30,6 +31,7 @@ const NewBudget = () => {
       };
     }, [selectedItems])
   );
+
 
   const fetchLocalData = () => {
     db.transaction(tx => {
@@ -140,9 +142,6 @@ const NewBudget = () => {
           </TouchableOpacity>
         </SafeAreaView >
         <SafeAreaView >
-          <TouchableOpacity>
-
-          </TouchableOpacity>
           <ScrollView style={{ maxHeight: 150 }} showsVerticalScrollIndicator={false}>
             {
               filterData.map((item, index) => {

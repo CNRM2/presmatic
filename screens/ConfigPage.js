@@ -106,7 +106,7 @@ const ConfigPage = () => {
 
   useEffect(() => {
     db.transaction(tx => {
-      tx.executeSql('CREATE TABLE IF NOT EXISTS materiales (idM INTEGER PRIMARY KEY AUTOINCREMENT, idMateriales VARCHAR(50) NOT NULL, nombreMaterial VARCHAR(50) NOT NULL, precio VARCHAR(20) NOT NULL, descripcion VARCHAR(50) NOT NULL)');
+      tx.executeSql('CREATE TABLE IF NOT EXISTS materiales (idM INTEGER PRIMARY KEY AUTOINCREMENT, idMateriales VARCHAR(50) NOT NULL, nombreMaterial VARCHAR(50) NOT NULL, precio VARCHAR(20) NOT NULL, descripcion VARCHAR(50) NOT NULL, idPresupuesto INTEGER, FOREIGN KEY (idPresupuesto) REFERENCES presupuestos(idPresupuesto))');
     }, (error) => {
       console.log('Error al crear la tabla:', error);
     }, () => {

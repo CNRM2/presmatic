@@ -8,7 +8,7 @@ import SignUp from './screens/SignUpPage';
 import Login from './screens/LoginPage';
 import ConfigPage from './screens/ConfigPage';
 import NewBudget from './screens/NewBudget';
-import prueba from './screens/prueba'
+import Tools from './screens/Tools';
 import Icon from 'react-native-vector-icons'
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -17,8 +17,8 @@ const Tabs = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tabs.Navigator>
-      <Tabs.Screen name='Home' options={{ headerShown: false,tabBarHideOnKeyboard:true, tabBarIcon:({color,size}) => (<Ionicons name='home' color={color} size={30}/> ),  }} component={HomePage} />
-      <Tabs.Screen name='Nuevo Presupuesto' options={{headerShown: false,tabBarHideOnKeyboard:true, tabBarIcon:({color,size}) => (<Ionicons name='create-outline' color={color} size={30}/> ),}} component={NewBudget}/>
+      <Tabs.Screen name='Home' options={{headerShown: false,tabBarHideOnKeyboard:true,tabBarIcon:({color,size}) => (<Ionicons name='home' color={color} size={30}/>),  }} component={HomePage} />
+      <Tabs.Screen name='Herramientas' options={{headerShown: false,tabBarHideOnKeyboard:true, tabBarIcon:({color,size}) => (<Ionicons name='hammer' color={color} size={30}/> ),}} component={Tools}/>
       <Tabs.Screen name='Configuraciones' options={{ headerShown: false,tabBarHideOnKeyboard:true, tabBarIcon:({color,size}) => (<Ionicons name='settings' color={color} size={30}/> ),}} component={ConfigPage}/>
       
     </Tabs.Navigator >
@@ -28,9 +28,10 @@ export default function navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen name="SignUp" options={{ headerShown: true, title:"", headerTransparent:true }} component={SignUp} />
+        <Stack.Screen name="SignUp" options={{ headerShown: true, title:"", headerTransparent:true}} component={SignUp} />
         <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
-        <Stack.Screen name="prueba" options={{ headerShown: false }} component={prueba} />
+        <Stack.Screen name="NewBudget" options={{ headerShown: false}} component={NewBudget} />
+        <Stack.Screen name="Home" options={{ headerShown:false}}  component={HomePage} />
         <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
