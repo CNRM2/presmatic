@@ -92,7 +92,7 @@ export default function HomePage() {
           <ScrollView showsVerticalScrollIndicator={false} style={{ marginHorizontal: 10, marginVertical: 10 }}>
             {presupuestos.map((presupuesto, index) => (
               <TouchableOpacity key={index} style={{ backgroundColor: "#FFFDFF", borderRadius: 10, marginBottom: 2, borderColor: "gray", borderWidth: 1 }}>
-                <Text style={{ fontSize: 15, fontWeight: "bold", marginLeft: 5 }}>
+                <Text style={{ fontSize: 15, fontWeight: "400", marginLeft: 5 }}>
                   {presupuesto.nombrePresupuesto},{presupuesto.ordenTrabajo}
                 </Text>
               </TouchableOpacity>
@@ -111,9 +111,9 @@ export default function HomePage() {
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "transparent" }}>
             <View style={{ backgroundColor: '#FFFDFF', padding: 40, borderRadius: 10, borderColor: "gray", borderWidth: 1, justifyContent: 'center', alignItems: 'center' }}>
               <Text style={{ fontSize: 18, fontWeight: "700", marginBottom: 20 }}>Crear Nuevo Presupuesto</Text>
-              <TextInput onChangeText={(value) => setNombrePresupuesto(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250, textAlign: "justify" }} placeholder={"Nombre del presupuesto"} />
-              <TextInput onChangeText={(value) => setOrdendeTrabajo(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250 }} placeholder='W.O' keyboardType="number-pad" />
-              <TextInput onChangeText={(value) => setDescripcion(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250 }} placeholder={"Descripción del presupuesto"} multiline={true} />
+              <TextInput onChangeText={(value) => setNombrePresupuesto(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250, textAlign: "justify" }} placeholder={"  Nombre del presupuesto"} />
+              <TextInput onChangeText={(value) => setOrdendeTrabajo(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250 }} placeholder='  W.O' keyboardType="number-pad" />
+              <TextInput onChangeText={(value) => setDescripcion(value)} style={{ borderRadius: 15, height: 50, backgroundColor: "#F0EEF0", marginBottom: 10, width: 250 }} placeholder={"  Descripción del presupuesto"} multiline={true} />
 
               <View style={{ flexDirection: "row" }}>
                 <TouchableOpacity onPress={onPressHandler} style={{ backgroundColor: "lightblue", width: 120, height: 60, borderRadius: 15, alignItems: "center", justifyContent: "center", marginRight: 10 }}>
@@ -169,7 +169,7 @@ const style = StyleSheet.create({
   historial: {
     flexDirection: "column",
     backgroundColor: "#F0EEF0",
-    width: 300,
+    width: 325,
     height: 320,
     marginTop: 50,
     marginBottom: 80,
